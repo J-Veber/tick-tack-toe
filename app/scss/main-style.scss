@@ -1,4 +1,7 @@
 @import url("../../node_modules/bootstrap/dist/css/bootstrap.css");
+@import "modal-choice";
+@import "modal-result";
+@import "media";
 
 body {
   background-color: whitesmoke;
@@ -6,7 +9,8 @@ body {
 
 .playground {
   $table-padding: 15px;
-  $table-cell-size: 60px ;
+  $table-cell-size: 720px;
+  $text-color: #383d40;
 
   height: 100vh;
 
@@ -15,7 +19,7 @@ body {
   }
 
   .playground-table {
-
+    margin: auto;
 
     table{
       margin: auto;
@@ -27,8 +31,24 @@ body {
     }
   }
 
-  .cell {
-    border: 1px solid grey;
+  .playground-information {
+    margin: auto;
+    height: $table-cell-size;
   }
 
+  .cell {
+    border: 1px solid $text-color;
+  }
+
+  h1 {
+    color: $text-color;
+  }
+
+  h2 {
+    color: $text-color;
+  }
+
+  .progress {
+    display: none;
+  }
 }

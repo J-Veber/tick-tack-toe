@@ -1,4 +1,3 @@
-@import url("../../node_modules/bootstrap/dist/css/bootstrap.css");
 .modal-choice {
   position: fixed;
   font-family: Arial, Helvetica, sans-serif;
@@ -33,31 +32,3 @@
     font-weight: bold; }
     .modal-choice .close :hover {
       background: #00d9ff; }
-
-body {
-  background-color: whitesmoke; }
-
-.playground {
-  height: 100vh; }
-  .playground .row {
-    height: 100%; }
-  .playground .playground-table {
-    margin: auto; }
-    .playground .playground-table table {
-      margin: auto;
-      width: 720px;
-      height: 720px;
-      padding: 15px 15px 15px 15px;
-      min-width: 320px;
-      min-height: 320px; }
-  .playground .playground-information {
-    margin: auto;
-    height: 720px; }
-  .playground .cell {
-    border: 1px solid #383d40; }
-  .playground h1 {
-    color: #383d40; }
-  .playground h2 {
-    color: #383d40; }
-  .playground .progress {
-    display: none; }

@@ -1,0 +1,17 @@
+@import url("../../node_modules/bootstrap/dist/css/bootstrap.css");
+body {
+  background-color: whitesmoke; }
+
+.playground {
+  height: 100vh; }
+  .playground .row {
+    height: 100%; }
+  .playground .playground-table table {
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    padding: 15px 15px 15px 15px;
+    min-width: 320px;
+    min-height: 320px; }
+  .playground .cell {
+    border: 1px solid grey; }

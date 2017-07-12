@@ -1,0 +1,34 @@
+@import url("../../node_modules/bootstrap/dist/css/bootstrap.css");
+
+body {
+  background-color: whitesmoke;
+}
+
+.playground {
+  $table-padding: 15px;
+  $table-cell-size: 60px ;
+
+  height: 100vh;
+
+  .row {
+    height: 100%;
+  }
+
+  .playground-table {
+
+
+    table{
+      margin: auto;
+      width: $table-cell-size;
+      height: $table-cell-size;
+      padding: $table-padding $table-padding $table-padding $table-padding;
+      min-width: 320px;
+      min-height: 320px;
+    }
+  }
+
+  .cell {
+    border: 1px solid grey;
+  }
+
+}

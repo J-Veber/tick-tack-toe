@@ -2,17 +2,17 @@
 @import "modal-choice";
 @import "modal-result";
 @import "media";
+@import "global-var";
 
 body {
   background-color: whitesmoke;
 }
 
 .playground {
-  $table-padding: 15px;
-  $table-cell-size: 720px;
-  $text-color: #383d40;
 
   height: 100vh;
+  min-width: 320px;
+  //overflow: hidden;
 
   .row {
     height: 100%;
@@ -50,5 +50,31 @@ body {
 
   .progress {
     display: none;
+  }
+}
+
+.block {
+  position: relative;
+  float:left;
+  width: 30%;
+  padding-bottom: 30%;
+  margin:1.66%;
+  background-color: #1E1E1E;
+  background-size: contain;
+
+  img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.blocks-wrapper {
+  width: 100%;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
   }
 }

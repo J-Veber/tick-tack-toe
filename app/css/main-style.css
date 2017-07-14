@@ -8,21 +8,21 @@
   left: 0;
   background: rgba(0, 0, 0, 0.8);
   z-index: 99999;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
-  display: none;
-  pointer-events: none; }
+  display: none; }
   .modal-choice :target {
     display: block;
     pointer-events: auto; }
   .modal-choice > div {
-    width: 400px;
+    width: 35%;
     position: relative;
     margin: 10% auto;
     padding: 5px 20px 13px 20px;
     border-radius: 4px;
     background: #fff; }
+  .modal-choice h2 {
+    padding: 15px 0 0 0;
+    margin-bottom: 1rem; }
   .modal-choice .close {
     line-height: 25px;
     position: absolute;
@@ -31,14 +31,53 @@
     top: 0;
     width: 24px;
     font-weight: bold; }
-    .modal-choice .close :hover {
-      background: #00d9ff; }
+    .modal-choice .close :focus {
+      color: transparent; }
+  .modal-choice .img-container {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    width: 45% !important; }
+  .modal-choice .img-container > img {
+    width: 100%;
+    cursor: pointer; }
+  .modal-choice .img-container > a {
+    display: none; }
+  .modal-choice .row {
+    justify-content: center; }
+  .modal-choice .nomatter {
+    text-align: right; }
+    .modal-choice .nomatter .href-nomatter {
+      border-bottom: 1px solid #383d40;
+      transition: all .4s ease-in-out; }
+      .modal-choice .nomatter .href-nomatter:hover {
+        border-bottom: transparent;
+        cursor: pointer; }
+
+@media (max-width: 576px) {
+  .modal-choice > div {
+    width: 80%; }
+  .modal-choice h2 {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 1.5rem; }
+  .modal-choice .img-container {
+    padding: 0;
+    width: 80%; } }
+
+@media (max-width: 991px) {
+  .modal-choice > div {
+    width: 60%; }
+  .modal-choice h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem; } }
 
 body {
   background-color: whitesmoke; }
 
 .playground {
-  height: 100vh; }
+  height: 100vh;
+  min-width: 320px; }
   .playground .row {
     height: 100%; }
   .playground .playground-table {
@@ -61,3 +100,23 @@ body {
     color: #383d40; }
   .playground .progress {
     display: none; }
+
+.block {
+  position: relative;
+  float: left;
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  background-color: #1E1E1E;
+  background-size: contain; }
+  .block img {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+.blocks-wrapper {
+  width: 100%; }
+  .blocks-wrapper:after {
+    content: '';
+    display: block;
+    clear: both; }

@@ -1,37 +1,41 @@
 doctype html
 head
     link(href="css/main-style.css" rel="stylesheet")
-    //link(href="../../node_modules/bootstrap/dist/css/bootstrap.css")
     meta(charset="UTF-8")
     title Tick-Tack-Toe
 
 body
     section(class='playground')
-        div(id='modal-choice', class='modal-choice')
+        .modal-choice(id='modal-choice')
             div
                 a(href='#close', class='close' id="close") X
-                h2 Модальное окно
-                p fpfp
-        div(class='row')
+                h2 Выберите сторону:
+                .row
+                    .img-container
+                        a(onclick="setCross()") Крестик
+                        img(src="img/cross.png" data-choice-id="cross" onclick="setCross()")
+                    .img-container
+                        a(onclick="setCross()") Нолик
+                        img(src="img/oval.png" data-choice-id="oval" onclick="setOval()")
+                .nomatter
+                    a(class="href-nomatter" data-choice-id="random" onclick="setRandom()") Не важно
+        .row
             - var x = 5;
-            div(class='col-8 playground-table')
-                table
-                    tr
-                        td(class='cell')
-                        td(class='cell')
-                        td(class='cell')
-                    tr
-                        td(class='cell')
-                        td(class='cell')
-                        td(class='cell')
-                    tr
-                        td(class='cell')
-                        td(class='cell')
-                        td(class='cell')
-            div(class='col-4 playground-information')
+            div(class='col-10 col-md-8 col-lg-8 playground-table')
+                .blocks-wrapper
+                    .block(onclick="setMark(0)" id="0")
+                    .block(onclick="setMark(1)" id="1")
+                    .block(onclick="setMark(2)" id="2")
+                    .block(onclick="setMark(3)" id="3")
+                    .block(onclick="setMark(4)" id="4")
+                    .block(onclick="setMark(5)" id="5")
+                    .block(onclick="setMark(6)" id="6")
+                    .block(onclick="setMark(7)" id="7")
+                    .block(onclick="setMark(8)" id="8")
+            div(class='col-10 col-md-4 col-lg-4 playground-information')
                 div(class='choice')
                     h1 Ваш выбор:
-                    p Здесь должна быть картинка
+                    p
                 hr
                 div(class='turn')
                     h2 Ходы:

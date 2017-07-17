@@ -101,7 +101,6 @@ body {
   background-color: whitesmoke; }
 
 .playground {
-  overflow: hidden;
   height: 100vh;
   min-width: 320px; }
   .playground .row {

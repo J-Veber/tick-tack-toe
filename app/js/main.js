@@ -5,7 +5,7 @@ let modalChoiceView = document.querySelector("#modal-choice");
 let modalCloseBtn = document.querySelector("#close");
 let res = document.querySelector(".choice p");
 let iteration = 0;
-let exit = false;
+let completeLevel = false;
 
 /**
  * @description mas for table cells
@@ -65,10 +65,10 @@ var cells = [
 function onLoad() {
     modalChoiceView.style.display = "block";
     // modalChoiceView.style.display = "none" ;
-    modalCloseBtn.addEventListener("click", () => {
-        modalChoiceView.style.display = "none";
-    });
-    if (exit === true) alert("YO");
+    // modalCloseBtn.addEventListener("click", () => {
+    //     modalChoiceView.style.display = "none";
+    // });
+    // if (completeLevel === true) alert("YO");
 }
 
 /**
@@ -114,13 +114,14 @@ function setRandom() {
 
 /**
  * @description Функция для установки кретика/нолика для пользователя и ПК
- * @param inputid - number. ИД ячейки, в которую нужно поставить метку.
+ * @param inputId - number. ИД ячейки, в которую нужно поставить метку.
  */
-function setMark(inputid) {
+function setMark(inputId) {
 
-    if (cells[inputid].empty && (exit === false) && iteration <=9) {
-        cells[inputid].empty = false;
-        cells[inputid].co = userChoice;
+    if (cells[inputId].empty && (completeLevel === false) && iteration <=9) {
+        iteration++;
+        cells[inputId].empty = false;
+        cells[inputId].co = userChoice;
         if (userChoice) {
             event.currentTarget.style.background = 'url("img/cross.png")';
             event.currentTarget.style.backgroundSize = 'cover';
@@ -128,13 +129,133 @@ function setMark(inputid) {
             event.currentTarget.style.background = 'url("img/oval.png")';
             event.currentTarget.style.backgroundSize = 'cover';
         }
-        createProgressElement(true, inputid);
+        createProgressElement(true, inputId);
+        if (checkLines(inputId) === true) exit();
         setTimeout(pcTurn, 100);
-        // pcTurn();
     } else {
-        if (iteration === 9) exit = true;
-        else console.log("ячейка с номер " + (inputid + 1) + " занята");
+        if (iteration > 9) exit();
+        else console.log("ячейка с номер " + (inputId + 1) + " занята");
     }
+
+}
+
+/**
+ * @description проверка одинаковых символов в столбце
+ * @param cellId - ИД кликнутой ячейки
+ * @return {boolean} - результат - false - не прошла проверка; true - иначе
+ */
+function checkVerticalLine(cellId) {
+    let column = cellId % 3;
+    let cellSign = cells[cellId].co;
+    let res = true;
+    for (let i = 0; i < 3 && res; i++) {
+        if (cells[column].empty || cells[column].co !== cellSign) {
+            res = false;
+        }
+        column += 3;
+    }
+    return res;
+}
+
+/***
+ * @description проверка одинаковых символов в строке
+ * @param cellId - ИД кликнутой ячейки
+ * @return {boolean} - результат - false - не прошла проверка; true - иначе
+ */
+function checkHorizontalLine(cellId) {
+    let columns = [0,3,6];
+    let cellSign = cells[cellId].co;
+    let currentRow = cellId;
+    let res = true;
+    while (currentRow !== columns[0] || currentRow !== columns[1] || currentRow !== columns[2]) {
+        currentRow--;
+    }
+    for (let i = 0; i < 3 && res; i++) {
+        if (cells[currentRow].empty || cells[currentRow].co !== cellSign) {
+            res = false;
+        }
+        currentRow++;
+    }
+    return res;
+}
+
+/***
+ * @description проверка одинаковых символов на главной диагонали
+ * @param cellId - ИД кликнутой ячейки
+ * @return {boolean} - результат - false - не прошла проверка; true - иначе
+ */
+function checkMainLine(cellId) {
+    let cellSign = cells[cellId].co;
+    let currentCell = cellId;
+    let res = true;
+    while (currentCell !== 0) {
+        currentCell -= 4;
+    }
+    for (let i = 0; i < 3 && res; i++) {
+        if (cells[currentCell].empty || cells[currentCell].co !== cellSign) {
+            res = false;
+        }
+        currentCell += 4;
+    }
+    return res;
+}
+
+/**
+ * @description проверка одинаковых символов на побочной диагонали
+ * @param cellId - ИД кликнутой ячейки
+ * @return {boolean} - результат - false - не прошла проверка; true - иначе
+ */
+function checkLeftLine(cellId) {
+    let cellSign = cells[cellId].co;
+    let currentCell = cellId;
+    let res = true;
+    while (currentCell !== 2) {
+        currentCell -= 2;
+    }
+    for (let i = 0; i < 3 && res; i++) {
+        if (cells[currentCell].empty || cells[currentCell].co !== cellSign) {
+            res = false;
+        }
+        currentCell += 2;
+    }
+    return res;
+}
+
+/**
+ * @description проверяет нет ли одинаковых элементов в ряду/диагонали.
+ * Если есть, то заканчивает игру, сообщая кто победил.
+ * @param cellId - ИД ячейки, которую надо проверить
+ */
+function checkLines(cellId) {
+    let res = true;
+    switch (cellId){
+        case 4:
+            if (!checkVerticalLine(cellId) || !checkHorizontalLine(cellId) || !checkMainLine(cellId) || !checkLeftLine(cellId)) {
+                res = false;
+            }
+            break;
+        case 0:
+        case 8:
+            if (checkVerticalLine(cellId) === false || !checkHorizontalLine(cellId) || !checkMainLine(cellId)) {
+                res = false;
+            }
+            break;
+        case 2:
+        case 6:
+            if (!checkVerticalLine(cellId) || !checkHorizontalLine(cellId) || !checkLeftLine(cellId)) {
+                res = false;
+            }
+            break;
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+            if (!checkVerticalLine(cellId) || !checkHorizontalLine(cellId)) {
+                res = false;
+            }
+            break;
+    }
+    return res;
 }
 
 /**
@@ -158,12 +279,12 @@ function createProgressElement(inputUser, inputid) {
  */
 function pcTurn() {
     let pcChoice = createPCCell();
-
     if (cells[pcChoice].empty) {
+        iteration++;
         cells[pcChoice].empty = false;
         cells[pcChoice].co = !userChoice;
+        // console.log("pcTurn: ", pcChoice);
         let pcCell = document.getElementById(cells[pcChoice].num.toString());
-        console.log(pcCell);
         if (userChoice) {
             pcCell.style.background = 'url("img/oval.png")';
             pcCell.style.backgroundSize = 'cover';
@@ -172,15 +293,22 @@ function pcTurn() {
             pcCell.style.backgroundSize = 'cover';
         }
         createProgressElement(false, pcChoice);
+        if (checkLines(pcChoice) === true) exit();
     } else {
-        pcTurn();
+        if (iteration>=9) {
+            exit();
+        } else pcTurn();
     }
 }
 
 function createPCCell() {
     let pcChoice = Math.floor(Math.random() * (9));
 
-    console.log(cells[pcChoice].num, cells[pcChoice].empty);
+    // console.log(cells[pcChoice].num, cells[pcChoice].empty);
     return pcChoice;
 }
 
+function exit() {
+    completeLevel = true;
+    alert("YO");
+}

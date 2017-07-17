@@ -4,14 +4,8 @@
     <list default="true" id="dd1473aa-147e-486c-b3b5-5b637a2963ec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/main-style.css" afterPath="$PROJECT_DIR$/app/css/main-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/media.css" afterPath="$PROJECT_DIR$/app/css/media.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/main.js" afterPath="$PROJECT_DIR$/app/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scss/global-var.scss" afterPath="$PROJECT_DIR$/app/scss/global-var.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scss/main-style.scss" afterPath="$PROJECT_DIR$/app/scss/main-style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scss/media.scss" afterPath="$PROJECT_DIR$/app/scss/media.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.pug" afterPath="$PROJECT_DIR$/app/views/index.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,34 +30,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main-style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scss/main-style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="142" column="33" lean-forward="false" selection-start-line="142" selection-start-column="33" selection-end-line="142" selection-end-column="33" />
               <folding>
-                <element signature="e#473#1124#0" expanded="false" />
+                <element signature="e#482#1133#0" expanded="false" />
+                <element signature="n#!!block;n#onLoad#0" expanded="false" />
+                <element signature="n#!!block;n#displayUserChoice#0" expanded="false" />
+                <element signature="n#!!block;n#setCross#0" expanded="false" />
+                <element signature="n#!!block;n#setOval#0" expanded="false" />
+                <element signature="n#!!block;n#setRandom#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="media.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scss/media.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="41" column="20" lean-forward="true" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +63,11 @@
       <find>turn</find>
       <find>currentId</find>
       <find>table</find>
-      <find>setMark</find>
       <find>cons</find>
+      <find>setMark</find>
+      <find>exit</find>
+      <find>console.log</find>
+      <find>checkLines</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\e.mitrakhova\WebstormProjects\tick-tack-toe</dir>
@@ -105,9 +87,9 @@
         <option value="$PROJECT_DIR$/app/scss/modal-choice.scss" />
         <option value="$PROJECT_DIR$/app/scss/global-var.scss" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/app/scss/main-style.scss" />
         <option value="$PROJECT_DIR$/app/scss/media.scss" />
         <option value="$PROJECT_DIR$/app/views/index.pug" />
+        <option value="$PROJECT_DIR$/app/scss/main-style.scss" />
         <option value="$PROJECT_DIR$/app/js/main.js" />
       </list>
     </option>
@@ -392,12 +374,12 @@
       <workItem from="1499985240817" duration="696000" />
       <workItem from="1499987366856" duration="27280000" />
       <workItem from="1500243595754" duration="202000" />
-      <workItem from="1500243811290" duration="16881000" />
+      <workItem from="1500243811290" duration="26610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66009000" />
+    <option name="totallyTimeSpent" value="75738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -473,7 +455,7 @@
         <state relative-caret-position="884">
           <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
           <folding>
-            <marker date="1500267362365" expanded="true" signature="1343:1367" ph="{...}" />
+            <marker date="1500269860292" expanded="true" signature="1343:1367" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -499,7 +481,12 @@
         <state relative-caret-position="748">
           <caret line="44" column="28" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
           <folding>
-            <element signature="e#473#1124#0" expanded="false" />
+            <element signature="e#482#1133#0" expanded="false" />
+            <element signature="n#!!block;n#onLoad#0" expanded="false" />
+            <element signature="n#!!block;n#displayUserChoice#0" expanded="false" />
+            <element signature="n#!!block;n#setCross#0" expanded="false" />
+            <element signature="n#!!block;n#setOval#0" expanded="false" />
+            <element signature="n#!!block;n#setRandom#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -541,7 +528,7 @@
         <state relative-caret-position="884">
           <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
           <folding>
-            <marker date="1500267362365" expanded="true" signature="1343:1367" ph="{...}" />
+            <marker date="1500269860292" expanded="true" signature="1343:1367" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -567,7 +554,12 @@
         <state relative-caret-position="935">
           <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
           <folding>
-            <element signature="e#473#1124#0" expanded="false" />
+            <element signature="e#482#1133#0" expanded="false" />
+            <element signature="n#!!block;n#onLoad#0" expanded="false" />
+            <element signature="n#!!block;n#displayUserChoice#0" expanded="false" />
+            <element signature="n#!!block;n#setCross#0" expanded="false" />
+            <element signature="n#!!block;n#setOval#0" expanded="false" />
+            <element signature="n#!!block;n#setRandom#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -585,7 +577,7 @@
         <state relative-caret-position="425">
           <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
           <folding>
-            <marker date="1500267362365" expanded="true" signature="1343:1367" ph="{...}" />
+            <marker date="1500269860292" expanded="true" signature="1343:1367" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -603,7 +595,12 @@
         <state relative-caret-position="153">
           <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
-            <element signature="e#473#1124#0" expanded="false" />
+            <element signature="e#482#1133#0" expanded="false" />
+            <element signature="n#!!block;n#onLoad#0" expanded="false" />
+            <element signature="n#!!block;n#displayUserChoice#0" expanded="false" />
+            <element signature="n#!!block;n#setCross#0" expanded="false" />
+            <element signature="n#!!block;n#setOval#0" expanded="false" />
+            <element signature="n#!!block;n#setRandom#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -637,7 +634,7 @@
         <state relative-caret-position="425">
           <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
           <folding>
-            <marker date="1500267362365" expanded="true" signature="1343:1367" ph="{...}" />
+            <marker date="1500269860292" expanded="true" signature="1343:1367" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -655,7 +652,12 @@
         <state relative-caret-position="153">
           <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
-            <element signature="e#473#1124#0" expanded="false" />
+            <element signature="e#482#1133#0" expanded="false" />
+            <element signature="n#!!block;n#onLoad#0" expanded="false" />
+            <element signature="n#!!block;n#displayUserChoice#0" expanded="false" />
+            <element signature="n#!!block;n#setCross#0" expanded="false" />
+            <element signature="n#!!block;n#setOval#0" expanded="false" />
+            <element signature="n#!!block;n#setRandom#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -742,7 +744,7 @@
         <state relative-caret-position="884">
           <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
           <folding>
-            <marker date="1500267362365" expanded="true" signature="1343:1367" ph="{...}" />
+            <marker date="1500269860292" expanded="true" signature="1343:1367" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -781,18 +783,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scss/main-style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+        <state relative-caret-position="-62">
+          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="142" column="33" lean-forward="false" selection-start-line="142" selection-start-column="33" selection-end-line="142" selection-end-column="33" />
           <folding>
-            <element signature="e#473#1124#0" expanded="false" />
+            <element signature="e#482#1133#0" expanded="false" />
+            <element signature="n#!!block;n#onLoad#0" expanded="false" />
+            <element signature="n#!!block;n#displayUserChoice#0" expanded="false" />
+            <element signature="n#!!block;n#setCross#0" expanded="false" />
+            <element signature="n#!!block;n#setOval#0" expanded="false" />
+            <element signature="n#!!block;n#setRandom#0" expanded="false" />
           </folding>
         </state>
       </provider>

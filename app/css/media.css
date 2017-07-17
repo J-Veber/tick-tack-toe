@@ -16,3 +16,28 @@
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 1.5rem; } }
+
+@media (min-width: 3000px) {
+  .playground-information {
+    height: 2200px !important; }
+  h1 {
+    font-size: 7rem; }
+  h2 {
+    font-size: 6rem; }
+  .choice p {
+    font-size: 5rem !important; }
+  .progress {
+    height: 1990px !important;
+    font-size: 3rem;
+    line-height: 4rem; }
+  .modal-choice h2 {
+    padding: 1rem 0 0 0;
+    margin-bottom: 3rem; }
+  .modal-choice .nomatter {
+    font-size: 3rem; }
+  .modal-choice .close {
+    line-height: 2rem;
+    right: 29px;
+    top: 23px;
+    width: 2rem;
+    font-size: 5rem; } }

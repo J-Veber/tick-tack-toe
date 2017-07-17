@@ -8,7 +8,7 @@ body
     section(class='playground')
         .modal-choice(id='modal-choice')
             div
-                a(href='#close', class='close' id="close") X
+                //a(href='#close', class='close' id="close") X
                 h2 Выберите сторону:
                 .row
                     .img-container
@@ -20,7 +20,6 @@ body
                 .nomatter
                     a(class="href-nomatter" data-choice-id="random" onclick="setRandom()") Не важно
         .row
-            - var x = 5;
             div(class='col-10 col-md-8 col-lg-8 playground-table')
                 .blocks-wrapper
                     .block(onclick="setMark(0)" id="0")
@@ -40,6 +39,8 @@ body
                 div(class='turn')
                     h2 Ходы:
                     hr
-                    p(class='progress')
+                    .progress(id="progress")
+                        p
+
 
     script(src="js/main.js")

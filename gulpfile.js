@@ -21,16 +21,8 @@ gulp.task('scss', function () {
     .pipe(livereload())
 });
 
-// gulp.task('js', function () {
-//     return gulp.src('app/js/*.js')
-//         .pipe(sass())
-//         .pipe(gulp.dest('app/js'))
-//         .pipe(livereload())
-// });
-
 gulp.task('watch', function () {
     gulp.watch('app/scss/*.scss', ['scss']);
     gulp.watch('app/views/*.pug', ['pug']);
-    // gulp.watch('app/js/*.js', ['js']);
     livereload.listen();
 });

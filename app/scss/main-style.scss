@@ -9,10 +9,9 @@ body {
 }
 
 .playground {
-
+  overflow: hidden;
   height: 100vh;
   min-width: 320px;
-  //overflow: hidden;
 
   .row {
     height: 100%;
@@ -49,7 +48,10 @@ body {
   }
 
   .progress {
-    display: none;
+    overflow-y: auto;
+    flex-direction: column;
+    height: 515px;
+    text-align: left;
   }
 }
 
@@ -59,7 +61,7 @@ body {
   width: 30%;
   padding-bottom: 30%;
   margin:1.66%;
-  background-color: #1E1E1E;
+  background-color: $empty-cell-color;
   background-size: contain;
 
   img{
@@ -77,4 +79,8 @@ body {
     display: block;
     clear: both;
   }
+}
+
+.table {
+  position: relative;
 }

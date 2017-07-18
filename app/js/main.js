@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', onLoad);
 
     tableCell.onclick = function (event) {
         let target = event.target.id;
-        console.log(target);
         setMark(target);
     };
 })();
@@ -100,7 +99,14 @@ function hideModalResultWindow() {
  * @description Отображение выбора пользователя в колонке справа
  */
 function displayUserChoice() {
-    res.textContent = userChoice ? "Крестик" : "Нолик";
+    if (userChoice === "oval") {
+        userChoice = true;
+        res.textContent = "Нолик";
+    } else {
+        userChoice = false;
+        res.textContent = "Крестик";
+    }
+    console.log(userChoice);
 }
 
 /**
@@ -118,11 +124,7 @@ function setOval() {
 }
 function setRandom() {
     let r = Math.floor(Math.random() * 2);
-    if (r === 1) {
-        userChoice = "oval";
-    } else {
-        userChoice = "cross";
-    }
+    userChoice = r == 1 ? "oval" : "cross";
     hideModalChoiceView();
     displayUserChoice();
 }
@@ -138,13 +140,13 @@ function setMark(inputId) {
         cells[inputId].empty = false;
         cells[inputId].co = userChoice;
         let currentCell = document.getElementById(inputId);
-        currentCell.style.background = userChoice ? 'url("img/cross.png")' : 'url("img/oval.png")';
+        currentCell.style.background = userChoice ? 'url("img/oval.png")' : 'url("img/cross.png")';
         createProgressElement(true, inputId);
         if (checkLines(inputId) === true) {
             exit(true);
         }
         if (iteration < 9 && completeLevel === false) setTimeout(pcTurn, 100);
-        if (iteration === 9 && completeLevel === false) exit();
+        if (iteration == 9 && completeLevel === false) exit();
     } else {
         console.log("ячейка с номер " + (inputId) + " занята");
     }
@@ -160,13 +162,14 @@ function pcTurn() {
         cells[pcChoice].empty = false;
         cells[pcChoice].co = !userChoice;
         let pcCell = document.getElementById(cells[pcChoice].num.toString());
-        if (userChoice) {
-            pcCell.style.background = 'url("img/oval.png")';
-            pcCell.style.backgroundSize = 'cover';
-        } else {
-            pcCell.style.background = 'url("img/cross.png")';
-            pcCell.style.backgroundSize = 'cover';
-        }
+        pcCell.style.background = !userChoice ? 'url("img/oval.png")' : 'url("img/cross.png")';
+        // if (userChoice) {
+        //     pcCell.style.background = 'url("img/oval.png")';
+        //     pcCell.style.backgroundSize = 'cover';
+        // } else {
+        //     pcCell.style.background = 'url("img/cross.png")';
+        //     pcCell.style.backgroundSize = 'cover';
+        // }
         createProgressElement(false, pcChoice);
         if (checkLines(pcChoice) === true) exit(false);
     } else {
@@ -328,8 +331,11 @@ function createPCCell() {
  * @param inputUser - победивший игрок
  */
 function exit(inputUser) {
-    if (completeLevel) resString.textContent = "Ничья" ;
-    resString.textContent =  inputUser ? "Вы победили!" : "Вы проиграли.";
+    if (inputUser == undefined) {
+        resString.textContent = "Ничья" ;
+    } else {
+        resString.textContent =  inputUser ? "Вы победили!" : "Вы проиграли.";
+    }
     showModalResultWindow();
     completeLevel = true;
 }

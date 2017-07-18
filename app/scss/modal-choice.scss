@@ -11,6 +11,7 @@
   z-index: 99999;
   transition: opacity 400ms ease-in;
   display: none;
+  min-width: 320px;
 
   :target {
     display: block;

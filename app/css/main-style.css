@@ -9,7 +9,8 @@
   background: rgba(0, 0, 0, 0.8);
   z-index: 99999;
   transition: opacity 400ms ease-in;
-  display: none; }
+  display: none;
+  min-width: 320px; }
   .modal-choice :target {
     display: block;
     pointer-events: auto; }
@@ -53,6 +54,14 @@
         border-bottom: transparent;
         cursor: pointer; }
 
+.modal-choice .res-btn {
+  display: flex;
+  margin: 1rem auto auto; }
+
+.modal-choice .result-string {
+  padding-top: 1rem;
+  margin-bottom: 1rem; }
+
 @media (max-width: 576px) {
   .modal-choice > div {
     width: 80%; }
@@ -62,7 +71,9 @@
     margin-bottom: 1.5rem; }
   .modal-choice .img-container {
     padding: 0;
-    width: 80%; } }
+    width: 80%; }
+  .modal-choice .result-string {
+    font-size: 2rem; } }
 
 @media (max-width: 991px) {
   .modal-choice > div {
@@ -97,26 +108,45 @@
     width: 2rem;
     font-size: 5rem; } }
 
+@media (orientation: landscape) and (aspect-ratio: 8 / 5) and (aspect-ratio: 1 / 1) {
+  .blocks-wrapper {
+    width: 100vh !important; } }
+
+@keyframes go-top-down {
+  from {
+    bottom: 50px; }
+  to {
+    bottom: 0; } }
+
+@-webkit-keyframes go-top-down {
+  from {
+    bottom: 50px; }
+  to {
+    bottom: 0; } }
+
 body {
   background-color: whitesmoke; }
 
 .playground {
   height: 100vh;
-  min-width: 320px; }
-  .playground .row {
-    height: 100%; }
-  .playground .playground-table {
-    margin: auto; }
-    .playground .playground-table table {
-      margin: auto;
-      width: 720px;
-      height: 720px;
-      padding: 15px 15px 15px 15px;
-      min-width: 320px;
-      min-height: 320px; }
-  .playground .playground-information {
+  min-width: 320px;
+  overflow-x: hidden;
+  padding-top: 5rem; }
+  .playground .warning-msg {
+    text-align: center; }
+  .playground-table table {
     margin: auto;
-    height: 720px; }
+    width: 720px;
+    height: 720px;
+    padding: 15px 15px 15px 15px;
+    min-width: 320px;
+    min-height: 320px; }
+  .playground-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; }
+  .playground-information p {
+    font-size: 1.5rem; }
   .playground .cell {
     border: 1px solid #383d40; }
   .playground h1 {
@@ -126,8 +156,8 @@ body {
   .playground .progress {
     overflow-y: auto;
     flex-direction: column;
-    height: 515px;
-    text-align: left; }
+    text-align: left;
+    padding: 10px; }
 
 .block {
   position: relative;
@@ -136,7 +166,9 @@ body {
   padding-bottom: 30%;
   margin: 1.66%;
   background-color: #ada4a4;
-  background-size: contain; }
+  background-size: cover !important; }
+  .block:nth-last-child(-n+3) {
+    margin-bottom: 0; }
   .block img {
     position: absolute;
     width: 100%;
@@ -151,3 +183,11 @@ body {
 
 .table {
   position: relative; }
+
+.choice {
+  height: 130px; }
+
+.turn {
+  height: calc(100% - 130px);
+  background: #fff;
+  padding: 10px; }

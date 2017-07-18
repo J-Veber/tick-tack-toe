@@ -1,0 +1,11 @@
+@keyframes go-top-down {
+  from {
+    bottom: 50px; }
+  to {
+    bottom: 0; } }
+
+@-webkit-keyframes go-top-down {
+  from {
+    bottom: 50px; }
+  to {
+    bottom: 0; } }

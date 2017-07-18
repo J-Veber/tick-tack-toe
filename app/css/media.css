@@ -7,7 +7,9 @@
     margin-bottom: 1.5rem; }
   .modal-choice .img-container {
     padding: 0;
-    width: 80%; } }
+    width: 80%; }
+  .modal-choice .result-string {
+    font-size: 2rem; } }
 
 @media (max-width: 991px) {
   .modal-choice > div {
@@ -41,3 +43,7 @@
     top: 23px;
     width: 2rem;
     font-size: 5rem; } }
+
+@media (orientation: landscape) and (aspect-ratio: 8 / 5) and (aspect-ratio: 1 / 1) {
+  .blocks-wrapper {
+    width: 100vh !important; } }

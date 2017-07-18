@@ -3,24 +3,25 @@
 @import "modal-result";
 @import "media";
 @import "global-var";
+@import "animation";
 
 body {
   background-color: whitesmoke;
 }
 
 .playground {
-  //overflow: hidden;
   height: 100vh;
   min-width: 320px;
+  overflow-x: hidden;
+  padding-top: 5rem;
 
-  .row {
-    height: 100%;
+  .warning-msg {
+    text-align: center;
   }
 
-  .playground-table {
-    margin: auto;
+  &-table {
 
-    table{
+    table {
       margin: auto;
       width: $table-cell-size;
       height: $table-cell-size;
@@ -30,9 +31,17 @@ body {
     }
   }
 
-  .playground-information {
-    margin: auto;
-    height: $table-cell-size;
+  &-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  &-information {
+
+    p {
+      font-size: 1.5rem;
+    }
   }
 
   .cell {
@@ -50,21 +59,25 @@ body {
   .progress {
     overflow-y: auto;
     flex-direction: column;
-    height: 515px;
     text-align: left;
+    padding: 10px;
   }
 }
 
 .block {
   position: relative;
-  float:left;
+  float: left;
   width: 30%;
   padding-bottom: 30%;
-  margin:1.66%;
+  margin: 1.66%;
   background-color: $empty-cell-color;
-  background-size: contain;
+  background-size: cover !important;
+  &:nth-last-child(-n+3) {
+    margin-bottom: 0;
+  }
+  //transition: fade_in() .2s ease-in-out;
 
-  img{
+  img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -83,4 +96,16 @@ body {
 
 .table {
   position: relative;
+}
+
+$choice-height: 130px;
+
+.choice {
+  height: $choice-height;
+}
+
+.turn {
+  height: calc(100% - #{$choice-height});
+  background: #fff;
+  padding: 10px;
 }

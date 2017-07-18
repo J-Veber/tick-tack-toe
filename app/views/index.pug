@@ -2,45 +2,51 @@ doctype html
 head
     link(href="css/main-style.css" rel="stylesheet")
     meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
     title Tick-Tack-Toe
 
 body
-    section(class='playground')
-        .modal-choice(id='modal-choice')
+    section.playground
+        .modal-choice#modal-choice
             div
-                //a(href='#close', class='close' id="close") X
                 h2 Выберите сторону:
-                .row
+                .row.playground-inner
                     .img-container
                         a(onclick="setCross()") Крестик
-                        img(src="img/cross.png" data-choice-id="cross" onclick="setCross()")
+                        img(src="img/cross.png", data-choice-id="cross", onclick="setCross()")
                     .img-container
                         a(onclick="setCross()") Нолик
                         img(src="img/oval.png" data-choice-id="oval" onclick="setOval()")
                 .nomatter
                     a(class="href-nomatter" data-choice-id="random" onclick="setRandom()") Не важно
-        .row
+        .row.playground-inner
             div(class='col-10 col-md-8 col-lg-8 playground-table')
                 .blocks-wrapper
-                    .block(onclick="setMark(0)" id="0")
-                    .block(onclick="setMark(1)" id="1")
-                    .block(onclick="setMark(2)" id="2")
-                    .block(onclick="setMark(3)" id="3")
-                    .block(onclick="setMark(4)" id="4")
-                    .block(onclick="setMark(5)" id="5")
-                    .block(onclick="setMark(6)" id="6")
-                    .block(onclick="setMark(7)" id="7")
-                    .block(onclick="setMark(8)" id="8")
+                    .block(id="0")
+                    .block(id="1")
+                    .block(id="2")
+                    .block(id="3")
+                    .block(id="4")
+                    .block(id="5")
+                    .block(id="6")
+                    .block(id="7")
+                    .block(id="8")
+
             div(class='col-10 col-md-4 col-lg-4 playground-information')
                 div(class='choice')
                     h1 Ваш выбор:
                     p
-                hr
+                    hr
                 div(class='turn')
                     h2 Ходы:
                     hr
                     .progress(id="progress")
-                        p
-
+        .modal-choice(id='modal-result')
+            div
+                a(href='#close', class='close' id="close") X
+                .rov
+                    h1(id="result-string" class="result-string")
+                button(type="button" class="btn btn-danger res-btn")
+                    a(data-choice-id="reset" onclick="resetLevel()") Начать заново
 
     script(src="js/main.js")
